@@ -1,0 +1,56 @@
+﻿<Window x:Class="BlackMafia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlackMafia"
+        mc:Ignorable="d"
+        Title="BlackMafia" Height="600" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="16*"/>
+            <ColumnDefinition Width="157*"/>
+        </Grid.ColumnDefinitions>
+        <!-- Top Section Includes Textfield and buttons that manipulate as well as Populate the list-->
+        <TextBox Name = "NameBox" Height="23" HorizontalAlignment="Left" MaxLines= "1" Margin="10,10,0,0" VerticalAlignment="Top" Width="218" Grid.ColumnSpan="2" KeyDown="EnterEvent"/>
+        <TextBox Name= "NumBox" Height="23" HorizontalAlignment="Left" MaxLines= "1" Margin="174.8,10,0,0" VerticalAlignment="Top" Width="70" Grid.Column="1" KeyDown="EnterEvent"/>
+        <Button Content="Add/Edit" Height="23" HorizontalAlignment="Right" Margin ="0,10,190,0" VerticalAlignment="Top" Width="65" Grid.Column="1" Click="AddName" />
+        <Button Content="Remove" Height="23" HorizontalAlignment="Right" Margin ="0,10,106.6,0" VerticalAlignment="Top" Width="65" Grid.Column="1" Click="RemoveName"/>
+        <Button Content="Retire/Res" Height="23" HorizontalAlignment="Right" Margin ="0,10,20.6,0" VerticalAlignment="Top" Width="67" Grid.Column="1" Click="Retire" RenderTransformOrigin="0.466,0.53"/>
+        <!-- Games Played Section-->
+        <TextBlock HorizontalAlignment="Right" Height="23" VerticalAlignment="Top" Margin="0,53,150,0" Grid.Column="1">Total Games Played:</TextBlock>
+        <TextBlock Name="TotalGamesPlayedBox" HorizontalAlignment="Right" VerticalAlignment="Top" Height="20" Margin="0,53,105,0" Grid.Column="1">0</TextBlock>
+        <Button Content="+" Width="23" Height="23" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,50,65,0" Click="IncrementGames"/>
+        <Button Content="-" Width="23" Height ="23" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,50,37,0" Click="DecrementGames"/>
+
+        <!--Teamspeak Reading populate-->
+        <TextBlock Text="Total Players:" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="1" Margin="0,76,149.6,0"/>
+        <TextBlock Name="TotalPlayersBox" Text="0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="20" Margin="0,76,104.6,20" Grid.Column="1"/>
+
+        <TextBlock Text="Log File:" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" Margin="0,0,207.6,37.4" Width="48"/>
+        <Button Content="Load TS" Name="LoadTS" VerticalAlignment="Bottom" Width="116" HorizontalAlignment="Right" Grid.Column="1" Margin="0,0,55.6,33.4" Height="22" Click="LoadTS_Click"/>
+
+        <TextBox Name="txtEditor" Grid.Column="1" Margin="282.8,190,36.6,90.4"/>
+
+
+        <!--ScrollViews for Active/Retired Players-->
+        <ScrollViewer HorizontalAlignment="Left" VerticalScrollBarVisibility="Auto" Width ="300" Margin="0,40,0,280" Grid.ColumnSpan="2">
+            <Grid>
+                <ListView Name="PlayerNamesList"  HorizontalAlignment ="Left" Width="218" Margin="10,0,0,0">
+                </ListView>
+                <ListView Name ="PlayerGamesPlayedList" HorizontalAlignment="Right" Width="70" Margin="0,0,0,0">
+                </ListView>
+            </Grid>
+        </ScrollViewer>
+        <!--Retired Scroll View-->
+        <ScrollViewer HorizontalAlignment="Left" VerticalScrollBarVisibility="Auto" Width ="300" Margin="0,295,0,5.4" Grid.ColumnSpan="2">
+            <Grid>
+                <ListView Name="RetiredPlayerNamesList"  HorizontalAlignment ="Left" Width="218" Margin="10,10,0,0">
+                </ListView>
+                <ListView Name ="RetiredPlayerGamesPlayedList" HorizontalAlignment="Right" Width="70" Margin="0,10,0,0">
+                </ListView>
+            </Grid>
+        </ScrollViewer>
+
+    </Grid>
+</Window>
