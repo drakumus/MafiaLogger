@@ -1,5 +1,6 @@
 # MafiaLogger
 This project is designed to assist the moderation of Mafia games. 
+The download can be found in the main folder: BlackMafia.exe
 
 #Usage
 
