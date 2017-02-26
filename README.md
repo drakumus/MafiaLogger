@@ -10,6 +10,8 @@ Go into Teamspeak and under:
 Tools>Options>Chat
 Check the box in this panel under "Automatic Logging" labled "Log channel chats"
 
+Note: Number of recorded lines does not matter. Chat is cleared everytime the process finishes reading it.
+
 Once this is done after asking for x's to log players as long as the player put an x in their chat their 
 name will be logged and added/updated to the current players list (first large pair of boxes).
 
@@ -20,5 +22,7 @@ The rest should be fairly striaght forward.
 
 #Warning
 Make sure you click on names to edit values not numbers.
+
 Names cannot be edited. You must remove wrong names and create new ones with the desired number
+
 Contact me here for any questions on use if you have no other means of contacting me.
